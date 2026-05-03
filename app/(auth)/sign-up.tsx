@@ -51,9 +51,9 @@ export default function SignUp() {
   };
 
   if (
-    signUp.status === "missing_requirements" &&
-    signUp.unverifiedFields.includes("email_address") &&
-    signUp.missingFields.length === 0
+    signUp?.status === "missing_requirements" &&
+    signUp?.unverifiedFields.includes("email_address") &&
+    signUp?.missingFields.length === 0
   ) {
     return (
       <View className="flex-1  justify-center px-6 py-12">
@@ -143,7 +143,7 @@ export default function SignUp() {
           onChangeText={setEmail}
           keyboardType="email-address"
         />
-        {errors.fields.emailAddress && (
+        {errors?.fields.emailAddress && (
           <Text className="text-red-400 mb-4">
             {errors.fields.emailAddress.message}
           </Text>
@@ -155,7 +155,7 @@ export default function SignUp() {
           onChangeText={setPassword}
           secureTextEntry
         />
-        {errors.fields.password && (
+        {errors?.fields.password && (
           <Text className="text-red-400 mb-4">
             {errors.fields.password.message}
           </Text>
