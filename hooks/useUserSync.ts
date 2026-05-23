@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 export const useUserSync = () => {
   const { user } = useUser();
-  
+
   const setIsAdmin = useUserStore((state) => state.setIsAdmin);
   const authSupabase = useSupabase();
 
@@ -36,7 +36,6 @@ export const useUserSync = () => {
       })
       .select("is_admin")
       .single();
-
 
     setIsAdmin(newUser!.is_admin ?? false);
   }
